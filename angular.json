@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -28,12 +31,22 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.scss"
+             
+              
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/script/script.js",
+              "src/assets/script/scroll.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,12 +109,41 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "khitan-humaira:ionic-cordova-build",
+            "devServerTarget": "khitan-humaira:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "khitan-humaira:ionic-cordova-build:production",
+              "devServerTarget": "khitan-humaira:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "khitan-humaira:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "khitan-humaira:build:production"
+            }
           }
         }
       }
