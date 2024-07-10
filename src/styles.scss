@@ -8,6 +8,7 @@ body, html {
     font-family: Arial, sans-serif;
     // background-color: #333;
   }
+
   
   /* Mengatur gaya untuk komponen header */
 //   app-header {
@@ -28,15 +29,15 @@ body, html {
   app-tabs {
     position: fixed;
     bottom: 0;
-    left: 0;
+    // left: 0;
     width: 100%;
     height: 60px;
     // background-color: #333;
-    color: white;
+    // color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
   }
 
-@import "assets/scss/styles.scss";
+// @import "assets/scss/styles.scss";

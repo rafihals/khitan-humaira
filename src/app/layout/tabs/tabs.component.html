@@ -1,4 +1,4 @@
-<div *ngIf="!isLandingPage && !isFormActive" class="navigation">
+<!-- <div *ngIf="!isLandingPage && !isFormActive" class="navigation">
     <ul>
     <li
       class="list"
@@ -15,4 +15,23 @@
     </li>
     <div class="indicator"></div>
   </ul>
+</div> -->
+
+<div class="sc-bottom-bar" *ngIf="!isLandingPage && !isFormActive" #menuBar>
+  <a class="sc-menu-item" [routerLink]="'/service'" (click)="selectMenu($event, 0)">
+    <i class="fas fa-list" style="margin-left: -2px;"></i>
+  </a>
+  <a class="sc-menu-item" [routerLink]="'/home'" (click)="selectMenu($event, 1)">
+    <i class="fas fa-home" style="margin-left: -2px;"></i>
+  </a>
+  <a class="sc-menu-item sc-current" [routerLink]="'/testimonial'" (click)="selectMenu($event, 2)">
+    <i class="fas fa-plus" style="margin-left: 1px;"></i>
+  </a>
+  <a class="sc-menu-item" [routerLink]="'/booking'" (click)="selectMenu($event, 3)">
+    <i class="fas fa-smile" style="margin-left: -1px;"></i>
+  </a>
+  <a class="sc-menu-item" [routerLink]="'/settings'" (click)="selectMenu($event, 4)">
+    <i class="fas fa-calendar-alt"></i>
+  </a>
+  <a class="sc-nav-indicator" #menuIndicator></a>
 </div>

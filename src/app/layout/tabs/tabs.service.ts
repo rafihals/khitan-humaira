@@ -5,10 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TabsService {
-  private _isFormActive = new BehaviorSubject<boolean>(false);
-  isFormActive$ = this._isFormActive.asObservable();
+  private formActiveSubject = new BehaviorSubject<boolean>(false);
+  formActive$ = this.formActiveSubject.asObservable();
 
   setFormActive(isActive: boolean) {
-    this._isFormActive.next(isActive);
+    this.formActiveSubject.next(isActive);
   }
 }

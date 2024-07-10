@@ -5,7 +5,7 @@ declare function tes(): any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./../../../assets/scss/styles.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('contactForm', { static: true }) contactForm!: ElementRef;
